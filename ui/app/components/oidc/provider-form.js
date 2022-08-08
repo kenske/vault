@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
+
 /**
  * @module OidcProviderForm
  * OidcProviderForm components are used to create and update OIDC providers
@@ -21,7 +22,6 @@ import { task } from 'ember-concurrency';
 export default class OidcProviderForm extends Component {
   @service store;
   @service flashMessages;
-
   @tracked modelValidations;
   @tracked radioCardGroupValue =
     !this.args.model.allowedClientIds || this.args.model.allowedClientIds.includes('*')
